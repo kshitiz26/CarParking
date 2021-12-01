@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row">
+    <div class="col">
+    <section>
+    <header class="header">
+    <div class="row">
+    <div class="col-md-2">
+    <form name="carForm">
+    <table>
+     <tr>
+    <th colspan="2">Add CarParking</th>
+    </tr>
+    <tr>
+    <td>Slot Id:</td>
+    <td><input id="slotId" name="slotId" ></td>
+    </tr>
+    <tr>
+    <td>Car Registration No:</td>
+    <td><input id="registrationNumber" name="registrationNumber"></td>
+    </tr>
+    <tr>
+    <td>Car Parking Time in Hours:</td>
+    <td><input id="parkingTime_Hours" name="parkingTime_Hours"></td>
+    </tr>
+    <tr>
+    <td colspan="2"> <button type="button" (click)="createCarparking()" class="blue-button">submit</button></td>
+    </tr>
+    </table>
+    </form>
+    </div>
+    </div>
+   </header>
+    </section>
+   <section class="main">
+   <table class="table">
+    <thead>
+    <tr>
+    <th>#</th>
+    <th>Slot Id</th>
+    <th>Car Registration No</th>
+    <th>Car Parking Time in Hours</th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let carparking of carparkings">
+    <th scope="row">{{carparking.reservationId}}</th>
+    <td>{{carparking.slotId}}</td>
+    <td>{{carparking.registrationNumber}}</td>
+    <td>{{carparking.parkingTime_Hours}}</td>
+    <td>
+    <button type="button" class="btn btn-danger" (click)="deleteCarparking(carparking)">Delete</button>
+    </td>
+    </tr>
+   </tbody>
+    </table>
+    </section>
+    </div>
+    </div>
+   </div>
